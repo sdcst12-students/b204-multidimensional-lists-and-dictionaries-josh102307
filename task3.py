@@ -31847,3 +31847,24 @@ pokemon = [
   }
 ]
 
+
+print("=========================================")
+print("Enter the english name or ID of a pokemon")
+print("=========================================")
+poke = input(": ")
+
+for i in pokemon:
+    names = i['name']['english']
+    types = i['type']
+    if "base" in i:
+        base = i["base"]
+    else:
+        base = ""
+
+    description = i['description']
+   
+    if poke == names:
+        print(f"{names}! I choose you!\n{names} is a {types} type pokemon\n{base}\nDescription: {description}\n ")
+
+   
+

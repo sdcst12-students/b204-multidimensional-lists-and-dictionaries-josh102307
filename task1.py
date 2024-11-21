@@ -37,10 +37,28 @@ table = [
     [-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 ]
 
-def target(lvl,ac):
-    return
+"""
+print(table[7])
+lvl = table[7]
+print(lvl)
+print(lvl[0])
+# index 0 -> ac 10
+# index 1 -> ac 9
+# index 2 -> ac 8
+# index 3 -> ac 7
+"""
+
+lvl = int(input("enter a level 1-20: "))
+ac = int(input("enter an armour class 10 --> -10: "))
+x = ac - 10
+x = x*-1
+
+print(table[lvl][x])
+
+
 
 def tests():
     assert target(5,7) == 11
     assert target(10,-10) == 20
     assert target(17,-3) == 13
+

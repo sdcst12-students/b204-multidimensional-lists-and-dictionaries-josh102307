@@ -32,8 +32,193 @@ teamData = {
         'goalsFor' : 0,
         'goalsAgainst' : 0
     },
-    'BC' : {}
+    'BC' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'MN' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'SK' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'ON' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'QC' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'PE' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'NS' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'NB' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+
+    },
+    'NL' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'YT' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'NT' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    },
+    'NU' : {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    }
+
 }
+""""
+for i in games:
+    #print("=================teams=================")
+    #print("AB,BC,MN,SK,ON,QC,PE,NS,NB,NL,YT,NT,NU")
+    print("=======================================")
+    print(f"{i['home']} scored {i['homeScore']}") 
+    homeTeam = i['home']
+    awayTeam = i['away']
+
+    print(teamData[homeTeam]['gamesPlayed'])
+    print(teamData[awayTeam]['gamesPlayed'])
+    teamData[homeTeam]['gamesPlayed'] = teamData[homeTeam]['gamesPlayed'] +1
+    teamData[awayTeam]['gamesPlayed'] = teamData[awayTeam]['gamesPlayed'] +1
+
+    if i["homeScore"] > i["awayScore"]:
+        print(f"{i['home']} won")
+        teamData[homeTeam]['wins'] = teamData[homeTeam]['wins']+1
+        print(f"wins: {teamData[homeTeam]['wins']}")
+        
+    elif i["homeScore"] == i["awayScore"]:
+            print('tie game')
+
+    elif i["homeScore"] < i["awayScore"]:
+                print(f"{i['home']} loses")
+
+"""
+
+for i in games:
+    print("=======================================")
+    homeTeam = i['home']
+    awayTeam = i['away']
+    teamData[homeTeam]['gamesPlayed'] = teamData[homeTeam]['gamesPlayed'] +1
+    teamData[awayTeam]['gamesPlayed'] = teamData[awayTeam]['gamesPlayed'] +1
+    print(f"{i['home']} scored {i['homeScore']}")
+    print(f"{i['away']} scored {i['awayScore']}")
+    if i['homeScore'] > i['awayScore']:
+        print(f"{i['home']} wins")
+        teamData[homeTeam]['wins'] = teamData[homeTeam]['wins'] +1
+        teamData[awayTeam]['losses'] = teamData[awayTeam]['losses'] +1
+        teamData[homeTeam]['goalsFor'] = teamData[homeTeam]['goalsFor'] + (i['homeScore'])
+        teamData[homeTeam]['goalsAgainst'] = teamData[homeTeam]['goalsAgainst'] + (i['awayScore'])
+        teamData[awayTeam]['goalsFor'] = teamData[awayTeam]['goalsFor'] + (i['awayScore'])
+        teamData[awayTeam]['goalsAgainst'] = teamData[awayTeam]['goalsAgainst'] + (i['homeScore'])
+        
+
+        
+    if i['awayScore'] > i['homeScore']:
+        print(f"{i['away']} wins")
+        teamData[awayTeam]['wins'] = teamData[awayTeam]['wins'] +1
+        teamData[homeTeam]['losses'] = teamData[homeTeam]['losses'] +1
+        teamData[awayTeam]['goalsFor'] = teamData[awayTeam]['goalsFor'] + (i['awayScore'])
+        teamData[awayTeam]['goalsAgainst'] = teamData[awayTeam]['goalsAgainst'] + (i['homeScore'])
+        teamData[homeTeam]['goalsFor'] = teamData[homeTeam]['goalsFor'] + (i['homeScore'])
+        teamData[awayTeam]['goalsAgainst'] = teamData[homeTeam]['goalsAgainst'] + (i['awayScore'])
+        
+
+    if i['homeScore'] == i['awayScore']:
+        print("tie game")
+        teamData[homeTeam]['ties'] = teamData[homeTeam]['ties'] +1
+        teamData[awayTeam]['ties'] = teamData[awayTeam]['ties'] +1
+        teamData[homeTeam]['goalsFor'] = teamData[homeTeam]['goalsFor'] + (i['homeScore'])
+        teamData[homeTeam]['goalsAgainst'] = teamData[homeTeam]['goalsAgainst'] + (i['awayScore'])
+        teamData[awayTeam]['goalsFor'] = teamData[awayTeam]['goalsFor'] + (i['awayScore'])
+        teamData[awayTeam]['goalsAgainst'] = teamData[awayTeam]['goalsAgainst'] + (i['homeScore'])
+
+    pass
+
+
+for i in games:
+    print("=================teams=================")
+    print("AB,BC,MN,SK,ON,QC,PE,NS,NB,NL,YT,NT,NU")
+    print("=======================================")
+    stats = input("enter a team to view stats: ")
+    print(teamData[stats])
+    if stats == 'quit':
+        exit()
+
+
+ 
+    
+
+    
+    
+
+    
+    
+
+
 
 def tests():
     assert teamData['BC']['gamesPlayed'] == 12
